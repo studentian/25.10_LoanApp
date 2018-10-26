@@ -1,0 +1,342 @@
+﻿<Window x:Class="LoanApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoanApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+
+        </Grid.RowDefinitions>
+
+        <TabControl Width="700" Height="350" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="10">
+            <TabItem Name="tbAff" Header="Step1. Afforability" Width="150" Height="40"  FontSize="15" FontWeight="Bold">
+                <StackPanel Orientation="Horizontal">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Name="tblkAffSal" Text="Gross monthly salary" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"  />
+                        <TextBox Name="tbxAffSal" Width="250" Height="30" Grid.Column="2" Grid.Row="1" Margin="5" />
+
+                        <TextBlock Name="tblkAffExp" Text="Total monthly expenses" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center"  />
+                        <TextBox Name="tbxAffExp" Width="250" Height="30" Grid.Column="2" Grid.Row="2" Margin="5" />
+
+                        <TextBlock Name="tblckAffTm" Text="Term of your loan" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center"  />
+                        <TextBox Name="tbxAffTm" Width="250" Height="30" Grid.Column="2" Grid.Row="3" Margin="5" />
+
+                        <TextBlock Name="tblkAffIntRate" Text="Interest Rate" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center"  />
+                        <TextBox Name="tbxAffIntRate" Width="250" Height="30" Grid.Column="2" Grid.Row="4" Margin="5" />
+
+                        <!--<StackPanel Grid.Column="3" Grid.Row="1" Grid.RowSpan="4" VerticalAlignment="Center" Margin="5">
+                            <Image Name="image" Grid.Column="4" Grid.Row="1" Width="300" VerticalAlignment="Center" Source="C:\Users\Ian\Documents\General Computing Ltd\Hostpapa\BackUps\22.06.2018_public_html\images\laptop.jpg" />
+                        </StackPanel>-->
+
+                        <StackPanel Grid.Column="3" Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Top" Margin="5">
+                            <TextBlock Name="tblkAffQual" Text="You qualify for:" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"  />
+                            <TextBox Name="tbxAffQual" Width="200" Height="90" Grid.Column="1" Grid.Row="1" Margin="5" />
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="4" Grid.Row="3" Grid.RowSpan="2" VerticalAlignment="Top" Margin="5">
+                            <TextBlock Name="tblckAffEstRpmt" Width="200" Text="Your estimated monthly repayment will be:" TextWrapping="Wrap" />
+                            <TextBox Name="tbxAffEstRpmt" Width="50" Height="30" Grid.Column="1" Grid.Row="1" Margin="5" />
+                        </StackPanel>
+
+                        <Button Name="btnAffNxt" Content="NEXT >" Grid.Column="4" Grid.Row="5" Margin="2" BorderBrush="Aqua"/>
+
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+            <TabItem Name="tbRepmt" Header="Step2. Repayment" Width="150" FontSize="15" FontWeight="Bold">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Name="tblkRpmtHM" Text="How much will you pay each month?" FontSize="20" TextDecorations="underline" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" VerticalAlignment="Center" />
+
+                    <TextBlock Name="tblkRpmtPP" Text="Purchase Price" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Center" />
+                    <TextBox Name="tboxRpmtPP" Width="210" Height="30" Grid.Column="2" Grid.Row="1" Margin="5" />
+
+                    <TextBlock Name="tblkRpmtDep" Text="Deposit (optional)" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center"  />
+                    <TextBox Name="tbxRpmtDep" Width="210" Height="30" Grid.Column="2" Grid.Row="2" Margin="5" />
+
+                    <TextBlock Name="tblkRpmtT" Text="Term of your loan" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center"  />
+                    <TextBox Name="tbxRpmtT" Width="210" Height="30" Grid.Column="2" Grid.Row="3" Margin="5" />
+
+
+
+                    <TextBlock Name="tblkRpmtInttRate" Text="Interest Rate" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center"  />
+                    <TextBox Name="tboxRpmtIntRate" Width="210" Height="30" Grid.Column="2" Grid.Row="4" Margin="5" />
+
+
+                    <StackPanel Grid.Column="3" Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Top" Margin="5">
+                        <TextBlock Name="txtBlkRpmtYRpt" Text="Your Repayment will be:" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"  />
+                        <TextBox Name="txtBxRpmtYourRpt" Width="200" Height="70" Grid.Column="1" Grid.Row="1" Margin="5" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="3" Grid.Row="3" Grid.RowSpan="2" VerticalAlignment="Top" Margin="5" >
+                        <TextBlock Name="txtblkRpmtPrM" Width="200" Text="Monthly payment:" TextWrapping="Wrap" FontSize="12" Margin="10" />
+                        <TextBox Name="txtbxAffEstRpt" Width="50" Height="30" Grid.Column="1" Grid.Row="1" Margin="5" />
+                    </StackPanel>
+
+
+                    <Button Name="btnRpmt" Content="NEXT >" Grid.Column="3" Grid.Row="5" Margin="10" BorderBrush="Aqua"/>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="tbSum" Header="Step3. Summary" Width="150" FontSize="15" FontWeight="Bold" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Name="tblkSummmaryBorrow" Text="Summary" FontSize="20" TextDecorations="underline" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" VerticalAlignment="Center" />
+
+                    <TextBlock Name="tblkSummmarySalary" Text="Gross monthly salary" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"  />
+                    <TextBlock Name="tbxSummmarySalary" Width="150" Height="30" Grid.Column="2" Grid.Row="1" Margin="5" />
+
+                    <TextBlock Name="tblkSummmaryExpenses" Text="Total monthly expenses" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center"  />
+                    <TextBlock Name="tbxSummmaryExpenses" Width="150" Height="30" Grid.Column="2" Grid.Row="2" Margin="5" />
+
+                    <TextBlock Name="tblkSummmaryfTerm" Text="Term of your loan" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center"  />
+                    <TextBlock Name="tbxSummmaryTerm" Width="150" Height="30" Grid.Column="2" Grid.Row="3" Margin="5" />
+
+                    <TextBlock Name="tblkSummmaryInterestRate" Text="Interest Rate" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center"  />
+                    <TextBlock Name="tbxSummmaryInterestRate" Width="150" Height="30" Grid.Column="2" Grid.Row="4" Margin="5" />
+
+
+                    <TextBlock Name="tblkSummaryPurchasePrice" Text="Purchase Price" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Center" />
+                    <TextBlock Name="tbxRpmtSummaryPrice" Width="150" Height="30" Grid.Column="4" Grid.Row="1" Margin="5" />
+
+                    <TextBlock Name="tblkSummaryDeposit" Text="Deposit (optional)" Grid.Column="3" Grid.Row="2" VerticalAlignment="Center"  />
+                    <TextBlock Name="tbxSummaryDeposit" Width="150" Height="30" Grid.Column="4" Grid.Row="2" Margin="5" />
+
+                    <TextBlock Name="tblkSummaryMaxQualify" Text="Qualfication amount" Grid.Column="3" Grid.Row="3" VerticalAlignment="Center"  />
+                    <TextBlock Name="tbxSummaryTerm" Width="150" Height="30" Grid.Column="4" Grid.Row="3" Margin="5" />
+
+                    <TextBlock Name="tblkSummaryMaxRepayment" Text="Maximum repayment" Grid.Column="3" Grid.Row="4" VerticalAlignment="Center"  />
+                    <TextBlock Name="tbxSummaryInterestRate" Width="150" Height="30" Grid.Column="4" Grid.Row="4" Margin="5" />
+
+
+                    <Button Name="btnSumSbt" Content="Submit" Grid.Column="4" Grid.Row="5" Margin="10" BorderBrush="Aqua"/>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="tbItOffrs" Header="4. Offers" Width="150" FontSize="15" FontWeight="Bold">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Name="tblkOffers" Text="List off loan approvals / rejections" FontSize="20" TextDecorations="underline" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0" VerticalAlignment="Center" />
+
+                    <FlowDocumentReader Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="6" Grid.RowSpan="10">
+                        <FlowDocument>
+
+                            <Table CellSpacing="6">
+
+                                <Table.Columns>
+                                    <TableColumn/>
+                                    <TableColumn/>
+                                    <TableColumn/>
+                                    <TableColumn/>
+                                    <TableColumn/>
+                                    <TableColumn/>
+                                </Table.Columns>
+
+                                <TableRowGroup>
+
+                                    <!-- Header row for the table. -->
+                                    <TableRow Background="LightGoldenrodYellow">
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Bold">Loan Provider</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Bold">Loan Amount</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Bold">Term</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Bold">Approved</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Bold">Offer Value</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Bold">Offer Term</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Bold">Accept Offer</Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+
+                                    <!-- Four data rows for the inner planets. -->
+                                    <TableRow>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">AIB</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">€400,000</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">30</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">Confirmed</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow Background="lightgray">
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">Standard Chartered</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">€400,000</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">20</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">Confirmed</Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">HSBC</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">€400,000</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">30</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">Declined</Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow Background="lightgray">
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">Ulster Bank</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">€400,000</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">10</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">Declined</Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">Bank Of Ireland</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">€400,000</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">10</Paragraph>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Paragraph FontSize="12" FontWeight="Medium">Confirmed</Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+
+                                    <!-- Footer row for the table. -->
+                                    <TableRow>
+                                        <TableCell ColumnSpan="4">
+                                            <Paragraph FontSize="10" FontStyle="Italic" Foreground="BlueViolet">
+                                                Information provided here is to provide guidance only.
+                                            </Paragraph>
+                                            <Paragraph FontSize="10" FontStyle="Italic" Foreground="BlueViolet">
+                                                Your financial services provider will provide you with additional documentation to sign prior to receiving a loan.
+                                            </Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+
+                                </TableRowGroup>
+                            </Table>
+                        </FlowDocument>
+                    </FlowDocumentReader>
+
+
+                </Grid>
+
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>
